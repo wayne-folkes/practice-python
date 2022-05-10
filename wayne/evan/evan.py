@@ -16,6 +16,7 @@
 
 from collections import defaultdict
 import json
+from pprint import pprint
 
 chats = {
     'turds odouls': set(['duncan', 'evan', 'scott']),
@@ -42,4 +43,4 @@ if __name__ == '__main__':
     for chatnick_set, chatnick in chatnicks.items():
         chatter, chatroom = chatnick_set
         chatter_dict[chatter].remove(chatroom)
-    print(json.dumps(chatter_dict))
+    print(json.dumps(chatter_dict, sort_keys=True, indent='\t'))
